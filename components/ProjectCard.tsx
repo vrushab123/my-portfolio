@@ -18,7 +18,7 @@ export type ProjectCardProps = {
   badges: string[];
   year: number;
   github_url: string;
-  demo_url: "";
+  demo_url?: string;
   stars: number;
   priority: number;
   category: string;
