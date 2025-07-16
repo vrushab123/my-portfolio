@@ -1,0 +1,348 @@
+@import url('../fonts/Arialic/arialic.css');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* 
+     * Minimal fallback theme variables for SSR and initial load
+     * These will be immediately overridden by the theme manager JavaScript
+     * Only keeping essential variables that are needed before JS loads
+     */
+
+    /* Core colors - using default theme as fallback */
+    --background: #121212;
+    --foreground: #121212;
+    --primary: #8a2bff;
+    --primary-foreground: #121212;
+    --muted: #f0f0f0;
+    --muted-foreground: #333333;
+    --border: #000000;
+
+    /* Essential font variables */
+    --font-sans: Inter, sans-serif;
+    --font-serif: ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+    --font-mono: Space Mono, monospace;
+
+    /* Layout essentials */
+    --radius: 0px;
+  }
+
+  /* 
+   * Dark mode fallback - minimal essential variables
+   * These will be immediately overridden by the theme manager
+   */
+  .dark {
+    --background: #000000;
+    --foreground: #ffffff;
+    --primary: #8a2bff;
+    --muted: #ffffff;
+    --muted-foreground: #acacac;
+    --border: #ffffff;
+  }
+
+  /* Smooth transitions for theme changes - excluding cursor and transform properties */
+  * {
+    transition-property:
+      color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 200ms;
+  }
+}
+
+* {
+  cursor: none;
+}
+
+button {
+  cursor: none;
+}
+
+.btnWithSlider {
+  --button-text-color: white;
+  --button-text-color-hover: white;
+  --border-color: #7d8082;
+  --button-background-color: #ece8e1;
+  --highlight-color: #8a2bff;
+
+  position: relative;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+  transition: all 0.15s ease;
+}
+
+.btnWithSlider::before,
+.btnWithSlider::after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  left: 0;
+  height: calc(50% - 5px);
+  border: 1px solid var(--border-color);
+  transition: all 0.15s ease;
+}
+
+.btnWithSlider::before {
+  top: 0;
+  border-bottom-width: 0;
+}
+
+.btnWithSlider::after {
+  bottom: 0;
+  border-top-width: 0;
+}
+
+.btnWithSlider:active,
+.btnWithSlider:focus {
+  outline: none;
+}
+
+.btnWithSlider:active::before,
+.btnWithSlider:active::after {
+  right: 3px;
+  left: 3px;
+}
+
+.btnWithSlider:active::before {
+  top: 3px;
+}
+
+.btnWithSlider:active::after {
+  bottom: 3px;
+}
+
+.sliderWrapper {
+  position: relative;
+  display: block;
+  padding: 10px 30px;
+  overflow: hidden;
+  box-shadow: inset 0px 0px 0px 1px transparent;
+}
+
+.btnSlider {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: -1px;
+  left: -8px;
+  width: 0;
+  background-color: var(--highlight-color);
+  transform: skew(-15deg);
+  transition: all 1s ease;
+}
+
+.sliderContent {
+  position: relative;
+}
+
+.btnWithSlider:hover {
+  color: white;
+}
+
+.btnWithSlider:hover .btnSlider {
+  width: calc(100% + 15px);
+}
+
+.Arialic_Hollow {
+  font-family: 'Arialic Hollow';
+}
+
+.custom-scroll-bar-y {
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+/* Chrome, Edge, and Safari */
+.custom-scroll-bar-y::-webkit-scrollbar {
+  width: 100%;
+  height: 4px;
+}
+
+.custom-scroll-bar-y::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 8px;
+}
+
+.custom-scroll-bar-y::-webkit-scrollbar-thumb {
+  background-color: gray;
+  border-radius: 1px;
+}
+
+.custom-scroll-bar-x {
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+/* Chrome, Edge, and Safari */
+.custom-scroll-bar-x::-webkit-scrollbar {
+  width: 6px;
+  height: 100%;
+}
+
+.custom-scroll-bar-x::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 8px;
+}
+
+.custom-scroll-bar-x::-webkit-scrollbar-thumb {
+  background-color: gray;
+  border-radius: 1px;
+}
+
+/* Theme toggle button style */
+.themeToggle {
+  --size: 1.2rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  width: var(--size);
+  height: var(--size);
+  box-shadow: inset calc(var(--size) * 0.33) calc(var(--size) * -0.25) 0;
+  border-radius: 999px;
+  color: #162447;
+  transition: all 1000ms;
+}
+
+.themeToggle:checked {
+  --ray-size: calc(var(--size) * -0.4);
+  --offset-orthogonal: calc(var(--size) * 0.65);
+  --offset-diagonal: calc(var(--size) * 0.45);
+  transform: scale(0.75);
+  color: #8a2bff;
+  box-shadow:
+    inset 0 0 0 var(--size),
+    calc(var(--offset-orthogonal) * -1) 0 0 var(--ray-size),
+    var(--offset-orthogonal) 0 0 var(--ray-size),
+    0 calc(var(--offset-orthogonal) * -1) 0 var(--ray-size),
+    0 var(--offset-orthogonal) 0 var(--ray-size),
+    calc(var(--offset-diagonal) * -1) calc(var(--offset-diagonal) * -1) 0
+      var(--ray-size),
+    var(--offset-diagonal) var(--offset-diagonal) 0 var(--ray-size),
+    calc(var(--offset-diagonal) * -1) var(--offset-diagonal) 0 var(--ray-size),
+    var(--offset-diagonal) calc(var(--offset-diagonal) * -1) 0 var(--ray-size);
+}
+
+.triggerLoader {
+  animation: width-animate-90 3000ms forwards;
+}
+
+.trigeerLoaderDone {
+  animation: width-animate-90-to-full 300ms forwards;
+}
+
+@keyframes width-animate-90 {
+  0% {
+    width: 0%;
+  }
+
+  20% {
+    width: 40%;
+  }
+
+  40% {
+    width: 60%;
+  }
+
+  80% {
+    width: 60%;
+  }
+
+  100% {
+    width: 90%;
+  }
+}
+
+@keyframes width-animate-90-to-full {
+  0% {
+    width: 90%;
+  }
+
+  99% {
+    width: 100%;
+  }
+
+  100% {
+    width: 0%;
+  }
+}
+
+@keyframes popupBounce {
+  0% {
+    transform: scale(0) rotate(-180deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1) rotate(-10deg);
+    opacity: 0.8;
+  }
+  75% {
+    transform: scale(0.95) rotate(5deg);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.safe-full-screen {
+  height: calc(100vh - 140px);
+}
+
+.custom-markdown a {
+  text-decoration: underline;
+  color: var(--primary);
+}
+
+.custom-markdown p > strong {
+  display: block;
+  margin-top: 10px;
+}
+
+/* Responsive utilities for theme dropdown and header */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
+/* Ensure theme dropdown doesn't cause overflow */
+.theme-dropdown-container {
+  min-width: 0;
+  flex-shrink: 0;
+}
+
+/* Custom responsive breakpoints */
+@media (min-width: 475px) {
+  .xs\:w-20 {
+    width: 5rem;
+  }
+
+  .xs\:w-80 {
+    width: 20rem;
+  }
+}
+
+/* Prevent horizontal scroll on small screens */
+@media (max-width: 640px) {
+  .header-nav-container {
+    overflow-x: hidden;
+  }
+
+  .header-nav-content {
+    min-width: 0;
+    flex-shrink: 1;
+  }
+}

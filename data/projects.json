@@ -1,0 +1,67 @@
+[
+  {
+    "title": "Personal Portfolio",
+    "tagline": "A personal portfolio site to showcase my projects, skills, and experience.",
+    "year": 2023,
+    "badges": [
+      "Next.js",
+      "Typescript",
+      "Javascript",
+      "Tailwind CSS",
+      "React",
+      "Vercel"
+    ],
+    "github_url": "https://github.com/vivek9patel/basic-personal-portfolio",
+    "demo_url": "",
+    "stars": 0,
+    "priority": 2,
+    "category": "Web Project"
+  },
+  {
+    "title": "NOVA AI Assistant",
+    "tagline": "An AI assistant that answers any question and also provides information about my projects and skills.",
+    "year": 2023,
+    "badges": [
+      "Javascript",
+      "Material UI",
+      "React"
+    ],
+    "github_url": "https://github.com/vrushab123/NOVA-27",
+    "demo_url": "https://nova-27.vercel.app/",
+    "stars": 0,
+    "priority": 5,
+    "category": "Web Project"
+  },
+  {
+    "title": "Weather-Aware Task Manager",
+    "tagline": "A modern, feature-rich task management application built with React that integrates weather data and motivational quotes to enhance productivity.",
+    "year": 2022,
+    "badges": ["React", "Chakra UI", "Express"],
+    "github_url": "https://github.com/vrushab123/Task-Manager",
+    "demo_url": "https://todolist-42.vercel.app/",
+    "stars": 0,
+    "priority": 4,
+    "category": "Web Project"
+  },
+  {
+    "title": "Converto - A File Converter",
+    "tagline": "A file converter that converts files between different formats.",
+    "year": 2021,
+    "badges": ["Javascript", "Tailwind CSS", "Vercel", "React"],
+    "github_url": "https://github.com/vrushab123/converto",
+    "demo_url": "https://converto27.vercel.app/",
+    "stars": 0,
+    "priority": 6,
+    "category": "Web Project"
+  },
+  {
+    "title": "GYM Website",
+    "tagline": "A website for a gym that allows users to book a session and view the schedule.",
+    "year": 2020,
+    "badges": ["Javascript", "Tailwind CSS", "Vercel", "React"],
+    "github_url": "https://github.com/vrushab123/Gym-Website",
+    "stars": 0,
+    "priority": 0,
+    "category": "Web Project"
+  }
+]
