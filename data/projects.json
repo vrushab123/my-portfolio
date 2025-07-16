@@ -21,11 +21,7 @@
     "title": "NOVA AI Assistant",
     "tagline": "An AI assistant that answers any question and also provides information about my projects and skills.",
     "year": 2023,
-    "badges": [
-      "Javascript",
-      "Material UI",
-      "React"
-    ],
+    "badges": ["Javascript", "Material UI", "React"],
     "github_url": "https://github.com/vrushab123/NOVA-27",
     "demo_url": "https://nova-27.vercel.app/",
     "stars": 0,

@@ -105,7 +105,11 @@ export default function AskTarsButton({
                   category: 'Button.Click',
                   action: 'Ask Tars Page Button',
                 });
-                window.open('https://nova-27.vercel.app', '_blank', 'noopener,noreferrer');
+                window.open(
+                  'https://nova-27.vercel.app',
+                  '_blank',
+                  'noopener,noreferrer'
+                );
               }}
               variant="outline"
               size="icon"

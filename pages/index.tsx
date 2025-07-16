@@ -148,10 +148,9 @@ const Home: NextPage = () => {
           </div>
           <div className="text-muted-foreground font-light space-y-1 mt-8">
             <p className="">
-              I'm a developer based in Mumbai, INDIA
-              , with 2 years of experience working with various software
-              applications, and teams from India. I specialize in
-              building{' '}
+              I'm a developer based in Mumbai, INDIA , with 2 years of
+              experience working with various software applications, and teams
+              from India. I specialize in building{' '}
               <Anchor
                 href="https://github.com/vrushab123"
                 onClick={() => handleLinkClick('Exceptional Link')}
@@ -178,10 +177,10 @@ const Home: NextPage = () => {
         </div>
         <div className="text-muted-foreground font-light mt-2 mb-4">
           For over 2 years, I have cultivated a deep understanding and expertise
-          in <span className="">Software Engineering</span>, always
-          prioritizing the user's needs. In every project I undertake, my aim is
-          to craft tailored, intuitive, and thoroughly tested experiences that
-          align the goals of companies with the expectations of users.
+          in <span className="">Software Engineering</span>, always prioritizing
+          the user's needs. In every project I undertake, my aim is to craft
+          tailored, intuitive, and thoroughly tested experiences that align the
+          goals of companies with the expectations of users.
         </div>
         <Separator className="my-4" />
 
@@ -219,7 +218,10 @@ const Home: NextPage = () => {
         <div
           onClick={() => {
             handleLinkClick('Recommendations Link');
-            window.open('https://www.linkedin.com/in/vrushab-singadia/', '_blank');
+            window.open(
+              'https://www.linkedin.com/in/vrushab-singadia/',
+              '_blank'
+            );
           }}
           className="text-muted-foreground underline hover:text-ring cursor-pointer"
         >

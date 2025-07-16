@@ -35,8 +35,7 @@ export default function LikeCounter() {
   const updateLikesInDB = () => {
     setUpdateIncrementTimeout(
       setTimeout(() => {
-        incrementLikesTo(likeIncrements - oldLikeIncrements).then(res => {
-        });
+        incrementLikesTo(likeIncrements - oldLikeIncrements).then(res => {});
       }, 3000)
     );
   };
