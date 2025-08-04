@@ -1,0 +1,90 @@
+[
+  {
+    "id": "video-193",
+    "title": "Cinematic Travel Montage",
+    "description": "A breathtaking travel video showcasing stunning landscapes and cultural experiences from around the world.",
+    "src": "/videos/Video-193.mp4",
+    "tags": ["Cinematic", "Travel", "Montage"],
+    "thumbnail": null
+  },
+  {
+    "id": "video-521",
+    "title": "Product Launch Promo",
+    "description": "Dynamic product launch video with modern transitions and engaging visual effects.",
+    "src": "/videos/Video-521.mp4",
+    "tags": ["Commercial", "Product", "Promo"],
+    "thumbnail": null
+  },
+  {
+    "id": "video-534",
+    "title": "Music Video Edit",
+    "description": "Creative music video editing with synchronized beats and artistic visual storytelling.",
+    "src": "/videos/Video-534.mp4",
+    "tags": ["Music", "Creative", "Artistic"],
+    "thumbnail": null
+  },
+  {
+    "id": "video-577",
+    "title": "Corporate Event Highlights",
+    "description": "Professional event coverage with smooth transitions and engaging storytelling.",
+    "src": "/videos/Video-577.mp4",
+    "tags": ["Corporate", "Events", "Professional"],
+    "thumbnail": null
+  },
+  {
+    "id": "video-603",
+    "title": "Short Film Trailer",
+    "description": "Compelling trailer edit that builds suspense and captures audience attention.",
+    "src": "/videos/Video-603.mp4",
+    "tags": ["Film", "Trailer", "Suspense"],
+    "thumbnail": null
+  },
+  {
+    "id": "video-662",
+    "title": "Wedding Highlights",
+    "description": "Beautiful wedding video capturing precious moments with elegant editing style.",
+    "src": "/videos/Video-662.mp4",
+    "tags": ["Wedding", "Romantic", "Elegant"],
+    "thumbnail": null
+  },
+  {
+    "id": "video-753",
+    "title": "Action Sports Edit",
+    "description": "High-energy sports video with dynamic cuts and adrenaline-pumping sequences.",
+    "src": "/videos/Video-753.mp4",
+    "tags": ["Sports", "Action", "Dynamic"],
+    "thumbnail": null
+  },
+  {
+    "id": "video-845",
+    "title": "Brand Story Video",
+    "description": "Emotional brand storytelling with compelling narrative and visual impact.",
+    "src": "/videos/Video-845.mp4",
+    "tags": ["Brand", "Storytelling", "Emotional"],
+    "thumbnail": null
+  },
+  {
+    "id": "video-940",
+    "title": "Documentary Style",
+    "description": "Documentary-style video with authentic storytelling and natural flow.",
+    "src": "/videos/Video-940.mp4",
+    "tags": ["Documentary", "Authentic", "Natural"],
+    "thumbnail": null
+  },
+  {
+    "id": "video-965",
+    "title": "Fashion Show Edit",
+    "description": "Glamorous fashion show video with stylish transitions and runway energy.",
+    "src": "/videos/Video-965.mp4",
+    "tags": ["Fashion", "Glamorous", "Runway"],
+    "thumbnail": null
+  },
+  {
+    "id": "video-989",
+    "title": "Creative Visual Effects",
+    "description": "Innovative video with advanced visual effects and creative editing techniques.",
+    "src": "/videos/Video-989.mp4",
+    "tags": ["VFX", "Creative", "Innovative"],
+    "thumbnail": null
+  }
+] 

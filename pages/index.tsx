@@ -8,6 +8,7 @@ import { useRouter } from 'next/router';
 import { Separator } from '@/components/ui/separator';
 import ReactGA from 'react-ga4';
 import dynamic from 'next/dynamic';
+import videosData from '../data/videos.json';
 
 const TRACKING_ID = process.env.NEXT_PUBLIC_TRACKING_ID;
 if (TRACKING_ID) ReactGA.initialize(TRACKING_ID);
@@ -22,6 +23,11 @@ LoadingSpinner.displayName = 'LoadingSpinner';
 
 // Dynamic imports for performance (client-side only) - defined after LoadingSpinner
 const ProjectCard = dynamic(() => import('../components/ProjectCard'), {
+  ssr: false,
+  loading: () => <LoadingSpinner />,
+});
+
+const VideoCard = dynamic(() => import('../components/VideoCard'), {
   ssr: false,
   loading: () => <LoadingSpinner />,
 });
@@ -104,6 +110,7 @@ ExperienceItem.displayName = 'ExperienceItem';
 const Home: NextPage = () => {
   const { projectList, setProjectList } = useContext(ProjectListContext);
   const [top6Projects, setTop6Projects] = useState<any[]>([]);
+  const [top3Videos, setTop3Videos] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const clientRouter = useRouter();
 
@@ -111,6 +118,7 @@ const Home: NextPage = () => {
     setTop6Projects(
       projectList.sort((a, b) => b.priority - a.priority).slice(0, 6)
     );
+    setTop3Videos(videosData.slice(0, 3));
   }, [projectList]);
 
   useEffect(() => {
@@ -141,6 +149,8 @@ const Home: NextPage = () => {
             <div className="mt-4">
               <span className="hidden sm:inline-block mr-4">I'm a </span>
               <span className="text-primary">Software Engineer 🤖</span>
+              <span className="hidden sm:inline-block mx-2">&</span>
+              <span className="text-primary">Video Editor 🎬</span>
             </div>
           </div>
           <div className="mt-4 flex items-center">
@@ -148,8 +158,8 @@ const Home: NextPage = () => {
           </div>
           <div className="text-muted-foreground font-light space-y-1 mt-8">
             <p className="">
-              I'm a developer based in Mumbai, INDIA , with 2 years of
-              experience working with various software applications, and teams
+              I'm a developer and video editor based in Mumbai, INDIA , with 2 years of
+              experience working with various software applications, video editing projects, and teams
               from India. I specialize in building{' '}
               <Anchor
                 href="https://github.com/vrushab123"
@@ -158,7 +168,7 @@ const Home: NextPage = () => {
               >
                 exceptional softwares
               </Anchor>
-              , applications, backend services and everything in between.
+              , applications, backend services, and creating compelling video content that tells stories.
             </p>
           </div>
         </div>
@@ -177,10 +187,10 @@ const Home: NextPage = () => {
         </div>
         <div className="text-muted-foreground font-light mt-2 mb-4">
           For over 2 years, I have cultivated a deep understanding and expertise
-          in <span className="">Software Engineering</span>, always prioritizing
-          the user's needs. In every project I undertake, my aim is to craft
+          in <span className="">Software Engineering</span> and <span className="">Video Editing</span>, always prioritizing
+          the user's needs and creative vision. In every project I undertake, my aim is to craft
           tailored, intuitive, and thoroughly tested experiences that align the
-          goals of companies with the expectations of users.
+          goals of companies with the expectations of users, while also creating compelling visual stories.
         </div>
         <Separator className="my-4" />
 
@@ -241,7 +251,7 @@ const Home: NextPage = () => {
             View all
           </Button>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 grid-rows-auto auto-rows-fr gap-x-5 gap-y-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 grid-rows-auto auto-rows-fr gap-x-10 gap-y-5"  >
           {isLoading ? (
             <LoadingSpinner />
           ) : (
@@ -249,6 +259,24 @@ const Home: NextPage = () => {
               <ProjectCard key={`${project.id}-${i}`} {...project} />
             ))
           )}
+        </div>
+      </div>
+
+      {/* Video Section */}
+      <div className="mt-20 sm:mt-32">
+        <div className="flex justify-between mb-10 items-center">
+          <div className="text-4xl sm:text-5xl font-medium">Video Editing</div>
+          <Button
+            variant="outline"
+            onClick={() => clientRouter.push('/editing-works')}
+          >
+            View all
+          </Button>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-15">
+          {top3Videos.map((video: any, i) => (
+            <VideoCard key={`${video.id}-${i}`} {...video} />
+          ))}
         </div>
       </div>
 

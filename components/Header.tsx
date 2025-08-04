@@ -80,6 +80,19 @@ const Header = ({ currentLink = '', loading = false }) => {
           Projects
         </Button>
       </Link>
+      <Link href="/editing-works" passHref>
+        <Button
+          variant="link"
+          onClick={onLinkClick}
+          className={`${
+            currentLink === 'editing-works'
+              ? 'text-primary'
+              : 'text-muted-foreground'
+          } underline-offset-2 ${mobile ? 'justify-start w-full text-lg h-12' : ''}`}
+        >
+          Editing Works
+        </Button>
+      </Link>
       <Link href="/resume" passHref>
         <Button
           variant="link"
