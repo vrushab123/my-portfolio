@@ -34,7 +34,11 @@ const EditingWorks: NextPage = () => {
   ).sort();
 
   useEffect(() => {
-    ReactGA.send({ hitType: 'pageview', page: '/editing-works', title: 'Editing Works' });
+    ReactGA.send({
+      hitType: 'pageview',
+      page: '/editing-works',
+      title: 'Editing Works',
+    });
   }, []);
 
   useEffect(() => {
@@ -61,9 +65,7 @@ const EditingWorks: NextPage = () => {
 
   const toggleTag = (tag: string) => {
     setSelectedTags(prev =>
-      prev.includes(tag)
-        ? prev.filter(t => t !== tag)
-        : [...prev, tag]
+      prev.includes(tag) ? prev.filter(t => t !== tag) : [...prev, tag]
     );
   };
 
@@ -80,9 +82,10 @@ const EditingWorks: NextPage = () => {
           Video Editing Portfolio
         </div>
         <div className="text-muted-foreground font-light max-w-3xl">
-          Explore my creative video editing work spanning various genres including cinematic travel videos, 
-          commercial promos, music videos, corporate events, and creative visual effects. Each project 
-          showcases different editing techniques and storytelling approaches.
+          Explore my creative video editing work spanning various genres
+          including cinematic travel videos, commercial promos, music videos,
+          corporate events, and creative visual effects. Each project showcases
+          different editing techniques and storytelling approaches.
         </div>
       </div>
 
@@ -94,7 +97,7 @@ const EditingWorks: NextPage = () => {
           <Input
             placeholder="Search videos by title or description..."
             value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
+            onChange={e => setSearchTerm(e.target.value)}
             className="pl-10"
           />
         </div>
@@ -102,7 +105,7 @@ const EditingWorks: NextPage = () => {
         {/* Tags Filter */}
         <div className="flex flex-wrap gap-2">
           <Badge
-            variant={selectedTags.length === 0 ? "default" : "outline"}
+            variant={selectedTags.length === 0 ? 'default' : 'outline'}
             className="cursor-pointer hover:bg-primary hover:text-primary-foreground"
             onClick={clearFilters}
           >
@@ -111,7 +114,7 @@ const EditingWorks: NextPage = () => {
           {allTags.map(tag => (
             <Badge
               key={tag}
-              variant={selectedTags.includes(tag) ? "default" : "outline"}
+              variant={selectedTags.includes(tag) ? 'default' : 'outline'}
               className="cursor-pointer hover:bg-primary hover:text-primary-foreground"
               onClick={() => toggleTag(tag)}
             >
@@ -123,7 +126,8 @@ const EditingWorks: NextPage = () => {
         {/* View Mode Toggle and Results Count */}
         <div className="flex justify-between items-center">
           <div className="text-sm text-muted-foreground">
-            {filteredVideos.length} video{filteredVideos.length !== 1 ? 's' : ''} found
+            {filteredVideos.length} video
+            {filteredVideos.length !== 1 ? 's' : ''} found
           </div>
           <div className="flex items-center gap-2">
             <Button
@@ -155,13 +159,18 @@ const EditingWorks: NextPage = () => {
           </div>
         </div>
       ) : (
-        <div className={
-          viewMode === 'grid' 
-            ? "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-3 2xl:grid-cols-4 gap-8"
-            : "space-y-4"
-        }>
+        <div
+          className={
+            viewMode === 'grid'
+              ? 'grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-3 2xl:grid-cols-4 gap-8'
+              : 'space-y-4'
+          }
+        >
           {filteredVideos.map((video, index) => (
-            <div key={video.id} className={viewMode === 'list' ? 'flex gap-4' : ''}>
+            <div
+              key={video.id}
+              className={viewMode === 'list' ? 'flex gap-4' : ''}
+            >
               <VideoCard {...video} />
             </div>
           ))}
@@ -172,11 +181,15 @@ const EditingWorks: NextPage = () => {
       <div className="mt-16 pt-8 border-t border-border">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           <div>
-            <div className="text-3xl font-bold text-primary">{videos.length}</div>
+            <div className="text-3xl font-bold text-primary">
+              {videos.length}
+            </div>
             <div className="text-muted-foreground">Total Videos</div>
           </div>
           <div>
-            <div className="text-3xl font-bold text-primary">{allTags.length}</div>
+            <div className="text-3xl font-bold text-primary">
+              {allTags.length}
+            </div>
             <div className="text-muted-foreground">Categories</div>
           </div>
           <div>
@@ -189,4 +202,4 @@ const EditingWorks: NextPage = () => {
   );
 };
 
-export default EditingWorks; 
+export default EditingWorks;

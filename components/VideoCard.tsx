@@ -17,7 +17,7 @@ const VideoCard: React.FC<VideoCardProps> = ({
   title,
   description,
   tags = [],
-  thumbnail
+  thumbnail,
 }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
@@ -76,7 +76,7 @@ const VideoCard: React.FC<VideoCardProps> = ({
             muted={isMuted}
             loop
           />
-          
+
           {/* Overlay Controls */}
           <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
             <div className="flex items-center gap-1 bg-black/70 backdrop-blur-sm rounded-lg p-1">
@@ -92,7 +92,7 @@ const VideoCard: React.FC<VideoCardProps> = ({
                   <Play className="h-3 w-3" />
                 )}
               </Button>
-              
+
               <Button
                 variant="ghost"
                 size="icon"
@@ -105,7 +105,7 @@ const VideoCard: React.FC<VideoCardProps> = ({
                   <Volume2 className="h-3 w-3" />
                 )}
               </Button>
-              
+
               <Button
                 variant="ghost"
                 size="icon"
@@ -136,17 +136,21 @@ const VideoCard: React.FC<VideoCardProps> = ({
           <h3 className="text-sm font-semibold text-foreground mb-1 line-clamp-1">
             {title}
           </h3>
-          
+
           {description && (
             <p className="text-xs text-muted-foreground mb-2 line-clamp-2">
               {description}
             </p>
           )}
-          
+
           {tags.length > 0 && (
             <div className="flex flex-wrap gap-1">
               {tags.slice(0, 2).map((tag, index) => (
-                <Badge key={index} variant="secondary" className="text-xs px-1 py-0.5">
+                <Badge
+                  key={index}
+                  variant="secondary"
+                  className="text-xs px-1 py-0.5"
+                >
                   {tag}
                 </Badge>
               ))}
@@ -163,4 +167,4 @@ const VideoCard: React.FC<VideoCardProps> = ({
   );
 };
 
-export default VideoCard; 
+export default VideoCard;

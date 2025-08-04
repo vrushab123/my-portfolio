@@ -158,9 +158,10 @@ const Home: NextPage = () => {
           </div>
           <div className="text-muted-foreground font-light space-y-1 mt-8">
             <p className="">
-              I'm a developer and video editor based in Mumbai, INDIA , with 2 years of
-              experience working with various software applications, video editing projects, and teams
-              from India. I specialize in building{' '}
+              I'm a developer and video editor based in Mumbai, INDIA , with 2
+              years of experience working with various software applications,
+              video editing projects, and teams from India. I specialize in
+              building{' '}
               <Anchor
                 href="https://github.com/vrushab123"
                 onClick={() => handleLinkClick('Exceptional Link')}
@@ -168,7 +169,8 @@ const Home: NextPage = () => {
               >
                 exceptional softwares
               </Anchor>
-              , applications, backend services, and creating compelling video content that tells stories.
+              , applications, backend services, and creating compelling video
+              content that tells stories.
             </p>
           </div>
         </div>
@@ -187,10 +189,12 @@ const Home: NextPage = () => {
         </div>
         <div className="text-muted-foreground font-light mt-2 mb-4">
           For over 2 years, I have cultivated a deep understanding and expertise
-          in <span className="">Software Engineering</span> and <span className="">Video Editing</span>, always prioritizing
-          the user's needs and creative vision. In every project I undertake, my aim is to craft
-          tailored, intuitive, and thoroughly tested experiences that align the
-          goals of companies with the expectations of users, while also creating compelling visual stories.
+          in <span className="">Software Engineering</span> and{' '}
+          <span className="">Video Editing</span>, always prioritizing the
+          user's needs and creative vision. In every project I undertake, my aim
+          is to craft tailored, intuitive, and thoroughly tested experiences
+          that align the goals of companies with the expectations of users,
+          while also creating compelling visual stories.
         </div>
         <Separator className="my-4" />
 
@@ -251,7 +255,7 @@ const Home: NextPage = () => {
             View all
           </Button>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 grid-rows-auto auto-rows-fr gap-x-10 gap-y-5"  >
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 grid-rows-auto auto-rows-fr gap-x-10 gap-y-5">
           {isLoading ? (
             <LoadingSpinner />
           ) : (
