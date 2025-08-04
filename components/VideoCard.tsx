@@ -9,7 +9,7 @@ interface VideoCardProps {
   title: string;
   description?: string;
   tags?: string[];
-  thumbnail?: string;
+  thumbnail?: string | null;
 }
 
 const VideoCard: React.FC<VideoCardProps> = ({
@@ -68,7 +68,7 @@ const VideoCard: React.FC<VideoCardProps> = ({
           <video
             ref={videoRef}
             src={src}
-            poster={thumbnail}
+            poster={thumbnail || undefined}
             className="w-full h-full object-cover"
             onEnded={handleVideoEnded}
             onPlay={() => setIsPlaying(true)}
